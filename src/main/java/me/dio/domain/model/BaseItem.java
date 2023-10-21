@@ -5,44 +5,43 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
-public class BaseItem {
-    @MappedSuperclass
-    public abstract class BaseItem {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-        private String icon;
-        private String description;
+@MappedSuperclass
+public abstract class BaseItem {
 
-        public News(Long id, String icon, String description) {
-            this.id = id;
-            this.icon = icon;
-            this.description = description;
-        }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String icon;
+    private String description;
 
-        public Long getId() {
-            return id;
-        }
+    public BaseItem(Long id, String icon, String description) {
+        this.id = id;
+        this.icon = icon;
+        this.description = description;
+    }
 
-        public void setId(Long id) {
-            this.id = id;
-        }
+    public Long getId() {
+        return id;
+    }
 
-        public String getIcon() {
-            return icon;
-        }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-        public void setIcon(String icon) {
-            this.icon = icon;
-        }
+    public String getIcon() {
+        return icon;
+    }
 
-        public String getDescription() {
-            return description;
-        }
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
-        public void setDescription(String description) {
-            this.description = description;
-        }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
